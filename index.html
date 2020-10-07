@@ -1,24 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kalkulator kosztów paliwa</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
             KALKULATOR KOSZTÓW PALIWA W DANYM OKRESIE
         </header>
-        <section class="main-data">
-            <div class="distance"><label for="distance">Odległość: </label> <input type="number" id="distance"></div>
-            <div class="avBurn"><label for="distance">Średnie spalanie:</label> <input type="number" id="avBurn"></div>
-            <div class="price"><label for="distance">Cena paliwa: </label> <input type="number" id="price"></div>
-            <div class="daysNumber"><label for="distance">Ilość dni: </label> <input type="number" id="daysNumber"></div>
-        </section>
+        <form class="main-data">
+            <div class="distance"><label for="distance">Odległość: </label> <input type="number" min='1' id="distance"></div>
+            <div class="avBurn"><label for="distance">Średnie spalanie:</label> <input type="number" min='1' id="avBurn"></div>
+            <div class="price"><label for="distance">Cena paliwa: </label> <input type="number" min='1' id="price"></div>
+            <div class="daysNumber"><label for="distance">Ilość dni: </label> <input type="number" min='1' id="daysNumber"></div>
+            <span>Czy w obie strony? </span>
+            <input type="radio" name="bothSides" id="yes" value="yes" checked>
+            <label for="yes">Tak</label>
+            <input type="radio" name="bothSides" id="no" value="no">
+            <label for="no">Nie</label>
+            <button class="calculate" type="submit">Oblicz</button>
+        </form>
         <section class="answer">
             <div>Koszty paliwa w danym okresie wyniosą: <span></span>zł.</div>
         </section>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
